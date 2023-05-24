@@ -1,0 +1,47 @@
+3  Metrics.
+container=Node exporter
+instance:172.19.0.2
+port 9100
+namespace= monitoring
+service= prometheus node exporter
+
+4.
+Metrics in file
+gc-garbage collector 
+type: Counter
+gc uncolatable 1
+Gc _colect_total
+type:counter
+
+python info
+type: Gauge
+Description:Collect info about python version
+
+process_resident_memory_bytes
+Type:Gauge
+
+Process start_time
+Type:Gauge
+
+Process_cpu
+Type:Counter
+
+Process_open_fds
+Type:Gauge
+ 
+ 5.
+ 1-events_sent_total
+ 2-request_processing_seconds_count
+ 3.process-cpu-total
+ 4.Resident-machine_memory_bytes       Virtual=process_virtual_memory_bytes
+ 5. python_gc_collections_total
+ 6- (avg(rate(process_cpu_seconds_total[5m])) * 100)
+ 7- rate(request_processing_seconds_count[5m])
+8- sum(rate(process_cpu_seconds_total[5m]))
+9- rate(events_sent_total[5m])
+10- avg(python_gc_collections_total)
+11-  python_gc_objects_uncollectable_total /python_gc_objects_collected_total
+12- process_virtual_memory_bytes / process_resident_memory_bytes
+13- rate(process_open_fds[5m])
+ 
+ 
